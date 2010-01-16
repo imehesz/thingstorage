@@ -1,0 +1,104 @@
+########################################
+# From the original SVN repo 1/16/2010 #
+########################################
+
+ 	
+added genre to the email and fixed the cookie bug, it now stores the email address for a month
+	Today (42 minutes ago) 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r25 		
+re-wrote the entire movie process and now we use TMDB instead of IMDB (http://api.themoviedb.org)
+	Today (10 hours ago) 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r24 		
+added pHaml and fixed the search click on the main page
+	Yesterday (16 hours ago) 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r23 		
+added amazon and google ads to the site ...
+	Oct 30, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r22 		
+hopefully fixed the email problem and added the pretty thickbox to SVN. yaaay
+	Oct 23, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r21 		
+finished the project for now, ready for testing ...
+	Oct 23, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r20 		
+added jQuery thickbox for the email sending process (not sending yet, though) almost done. shooting for next weekend. fingers X
+	Sep 19, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r19 		
+huhh, added bunch of stuff - IMDB movie fetching with AJAX, if the movie has not yet been cashed - tried implementing pHaml - did not work out - added a close button to the extra info DIV - going to sleep now
+	Sep 18, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r18 		
+finished the design so far, removed the weird TR behavior when hover over with the mouse, also finished the harvesting process. yaaay
+	Sep 12, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r17 		
+added SqLite support and started with the list view, imported jQuery with google to improve speed
+	Sep 07, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r16 		
+added and implemented an IMDB library into Yii and started the basic search controller/action
+	Aug 29, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r15 		
+played with some design stuff and added the main logo
+	Aug 29, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r14 		
+making the design to match the one in my head
+	Aug 15, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r13 		
+added the main theme to the project
+	Aug 14, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r12 		
+created default Yii structure
+	Aug 01, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r11 		
+created default Yii structure
+	Aug 01, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r10 		
+added ustorage
+	Aug 01, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r9 		
+forgot to add the search template. sorry.
+	May 23, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r8 		
+removed sample stuff, added some comments to the code and finished the search feature
+	May 23, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r7 		
+added iSearch which is a demo for limonade PHP microframework and iUi iPhone simulator :)
+	May 22, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r6 		
+trying to get some authentication
+	May 21, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r5 		
+added some controllers
+	May 20, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r4 		
+added classic limonade structure
+	May 19, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r3 		
+added dreamcatcher projet folder
+	May 19, 2009 	
+imehesz
+[Get email change notifications about comments on this revision.] 	r2 		
+first, test, commit
+	May 15, 2009 	
+imehesz

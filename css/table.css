@@ -1,0 +1,62 @@
+/* 
+    Document   : table
+    Created on : Sep 7, 2009, 10:48:28 AM
+    Author     : imehesz
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#box-table-a {
+    border-collapse:collapse;
+    font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+    font-size:12px;
+    margin:20px;
+    text-align:left;
+    width:100%;
+}
+
+#box-table-a th {
+    /* background:#B9C9FE none repeat scroll 0 0; */
+    background:#008080 none repeat scroll 0 0;
+    border-bottom:1px solid #FFFFFF;
+    /*border-top:4px solid #AABCFE;*/
+    border-top:4px solid #348781;
+    /* color:#003399; */
+    color: #fff;
+    font-size:18px;
+    font-weight:bolder;
+    padding:8px;
+}
+
+
+#box-table-a tr:hover td {
+    /* background:#D0DAFD none repeat scroll 0 0; */
+    background:#348781 none repeat scroll 0 0;
+    /* color:#333399; */
+    color: #fff;
+}
+
+
+#box-table-a tr td.nohover{
+    background:#fff none repeat scroll 0 0;
+}
+
+#box-table-a tr:hover td.nohover{
+    /* background:#E8EDFF none repeat scroll 0 0; */
+    background:#fff none repeat scroll 0 0;
+    color: #666699;
+}
+
+#box-table-a td {
+    background:#E8EDFF none repeat scroll 0 0;
+    border-bottom:1px solid #FFFFFF;
+    border-top:1px solid transparent;
+    color:#666699;
+    padding:8px;
+    font-size: 16px;
+}
