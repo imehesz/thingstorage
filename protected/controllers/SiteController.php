@@ -91,13 +91,25 @@ class SiteController extends CController
 
     $moboco = Yii::app()->request->getParam( 'moboco', NULL );
 
-    switch( $moboco )
-    {
-        case 'movie':
-                    $movies = Movie::model()->harvestTmdb( $name );
-                    $this -> render( 'list', array( 'movies' => $movies ) );
-                    break;
-    }
+    	switch( $moboco )
+		{
+			case 'movie':
+					$movies = Movie::model()->harvestTmdb( $name );
+					$this -> render( 'list', array( 'movies' => $movies ) );
+					break;
+
+			case 'book':
+					$isbn = $name; // pretty gettho ...
+					$book = Book::model()->findBook( $isbn );
+
+					var_dump( $book );
+					die();
+
+					// since we can only have 1 book
+					// we will only render 1 book
+					$this -> render( 'book', array( 'book' => $book ) );
+					break;
+		}
 
 //  TODO revise this and maybe remove
 //

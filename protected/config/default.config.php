@@ -69,10 +69,10 @@ defined( 'ISBN_BASE_URL' ) or define('ISBN_BASE_URL', 'https://isbndb.com' );
 /**
  *
  */
-defined( 'ISBN_SEARCH_URL' ) or define( 'ISBN_SEARCH_URL', ISBN_BASE_URL . '/api/books.xml?access_key=' . ISBN_API_KEY . '&index1=isbn&value1=' );
+defined( 'ISBN_SEARCH_URL' ) or define( 'ISBN_SEARCH_URL', ISBN_BASE_URL . '/api/books.xml?access_key=' . ISBN_API_KEY . '&index1=isbn&results=texts&value1=' );
 
 /**
  *
  */
-defined( 'ISBN_TITLE_URL' ) or define( 'ISBN_TITLE_URL', ISBN_BASE_URL . '/api/books.xml?access_key=' . ISBN_API_KEY . '&index1=title&value1=' );
+defined( 'ISBN_TITLE_URL' ) or define( 'ISBN_TITLE_URL', ISBN_BASE_URL . '/api/books.xml?access_key=' . ISBN_API_KEY . '&index1=title&results=texts&value1=' );
 
