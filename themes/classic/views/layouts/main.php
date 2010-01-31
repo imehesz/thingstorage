@@ -24,7 +24,10 @@
 	<div id="container">
         <?= $content; ?>
 		<div id="bottom">
-            <span>&copy; <?= date( 'Y', time() ); ?>  mehesz<font style="color:#f00;">.</font>net</span> Home - <a href="#">About</a> - <a href="javascript:void(0);" onclick="alert('info [ at ] mehesz.net');">Contact</a> - <a href="#">Advertise</a>
+            Home - <a href="javascript:void(0);" onclick="alert('info [ at ] mehesz.net');">Contact</a>
+			<div>
+				&copy; <?= date( 'Y', time() ); ?>  mehesz<font style="color:#f00;">.</font>net <br /> Powered by <a href="http://yiiframework.com">Yii Framework</a> - <a href="http://www.themoviedb.org">The Movie DB</a> - <a href="http://isbndb.com">IsbnDB</a> 
+			</div>
 		</div>
 
         <?php /*

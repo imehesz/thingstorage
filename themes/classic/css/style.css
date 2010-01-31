@@ -262,3 +262,22 @@ a img {	border: 0px solid #FFFFFF;}
 		#keywords { font-size:10px; color:#878787; margin:0 35px;}
 
 .spec {color: red;}
+
+.yellow-infobox
+{
+	width:50%;
+	text-align:center;
+	margin:0 auto;
+	padding:10px;
+	background-color:#ffff99;
+	margin-top:20px;
+	border:2px solid #ff9900;
+	display:none;
+}
+
+.amazon-ad
+{
+	width:100%;
+	text-align:center;
+	margin-top:50px;
+}

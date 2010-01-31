@@ -55,3 +55,24 @@ defined( 'TMDB_XML_INFO' ) or define( 'TMDB_XML_INFO', 'http://api.themoviedb.or
  *
  */
 defined( 'TMDB_JSON_INFO' ) or define( 'TMDB_JSON_INFO', 'http://api.themoviedb.org/2.1/Movie.getInfo/en/json/' );
+
+/**
+ *
+ */
+defined( 'ISBN_API_KEY' ) or define( 'ISBN_API_KEY', 'your isbndb.com ID' );
+
+/**
+ *
+ */
+defined( 'ISBN_BASE_URL' ) or define('ISBN_BASE_URL', 'https://isbndb.com' );
+
+/**
+ *
+ */
+defined( 'ISBN_SEARCH_URL' ) or define( 'ISBN_SEARCH_URL', ISBN_BASE_URL . '/api/books.xml?access_key=' . ISBN_API_KEY . '&index1=isbn&value1=' );
+
+/**
+ *
+ */
+defined( 'ISBN_TITLE_URL' ) or define( 'ISBN_TITLE_URL', ISBN_BASE_URL . '/api/books.xml?access_key=' . ISBN_API_KEY . '&index1=title&value1=' );
+
