@@ -102,9 +102,6 @@ class SiteController extends CController
 					$isbn = $name; // pretty gettho ...
 					$book = Book::model()->findBook( $isbn );
 
-					var_dump( $book );
-					die();
-
 					// since we can only have 1 book
 					// we will only render 1 book
 					$this -> render( 'book', array( 'book' => $book ) );
@@ -216,4 +213,61 @@ EMAILBODY;
 
 		$this -> render( 'email', array( 'form' => $form ) );
 	}
+
+	public function actionEmailbook()
+	{
+		$id = Yii::app()->request->getParam( 'id', NULL );
+		$book = Book::model()->findByPk($id);
+		$form = new Email();
+
+        $form->subject = $book->title . ' - ' . $book->author;
+        $form->body = <<<EMAILBODY
+Title: {$book->title}
+
+Author: {$book->author}
+
+Summary: {$book->summary}
+
+Publisher: {$book->publisher}
+
+ISBN: {$book->isbn}
+ISBN-13: {$book->isbn13}
+EMAILBODY;
+
+		if( $_POST )
+		{
+            $this -> _mailTheStuff();
+			$this->redirect( $this->createUrl('site/search') );
+		}
+
+		$this -> render( 'email', array( 'form' => $form ) );
+	}
+
+    private function _mailTheStuff()
+    {
+        if( $_POST['Email']['remember_me'] )
+        {
+            setcookie('mehesznet_storedbyu_email', $_POST['Email']['email_address'], 2592000 + time() );
+        }
+
+        $to 		= $_POST['Email']['email_address'];
+        $subject 	= $_POST['Email']['subject'];
+        $message    = $_POST['Email']['body'] . "\r\n\r\n" . '--' . "\r\n" . 'stored by U | info [ at ] mehesz.net';
+
+        $headers 	= 'From: noreply-book-stored-by-u@mehesz.net' . "\r\n" .
+                    'Reply-to: noreply-book-stored-by-u@mehesz.net'. "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+
+
+        $session = new CHttpSession;
+        $session -> open();
+        if( mail( $to, $subject, $message, $headers ) )
+        {
+            $session['mehesznet_storedbyu_flash_message'] = 'email has been sent ...';
+        }
+        else
+        {
+            $session['mehesznet_storedbyu_flash_message'] = 'errr, please try again ...';
+        }
+    }
 }

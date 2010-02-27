@@ -28,7 +28,10 @@
 
 <?= CHtml::endForm(); ?>
 </div>
-<div style="text-align:center;width:100%;font-size:12px;color:#777;margin-top:10px;">
-	<strong>NOTE:</strong> the email will be delivered from <br /><i>noreply-DVD-stored-by-u@mehesz.net</i>
+<div style="text-align:center;width:100%;font-size:10px;color:#777;margin-top:10px;">
+	<strong>NOTE:</strong> the email will be delivered from <br />
+    <i>noreply-dvd-stored-by-u@mehesz.net</i><br />
+    <i>noreply-book-stored-by-u@mehesz.net</i><br />
+    <i>noreply-comics-stored-by-u@mehesz.net</i>
 </div>
 <?php exit(); ?>

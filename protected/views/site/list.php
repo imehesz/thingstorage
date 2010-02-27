@@ -77,7 +77,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
             <td class="nohover" colspan="3" style="font-size:12px;" id="info_summary_<?= $movie->imdbID; ?>">
                 <div id="movie_<?= $movie->imdbID; ?>"></div>
 				<p></p>
-                <a  class="thickbox" href="<?= $this -> createUrl( 'site/email', array( 'height' => 350, 'width' => 400, 'id' => $movie->imdbID ) );?>">send email</a> | <a href="http://www.imdb.com/title/tt<?= $movie->imdbID; ?>" alt="in a new window" title="in a new window" target="_blank">check on IMDB</a> | <a href="javascript:void(0);" onClick="javascript:$('#info_<?= $movie->imdbID ?>').hide();">close</a>
+                <a  class="thickbox" href="<?= $this -> createUrl( 'site/email', array( 'height' => 375, 'width' => 425, 'id' => $movie->imdbID ) );?>">send email</a> | <a href="http://www.imdb.com/title/tt<?= $movie->imdbID; ?>" alt="in a new window" title="in a new window" target="_blank">check on IMDB</a> | <a href="javascript:void(0);" onClick="javascript:$('#info_<?= $movie->imdbID ?>').hide();">close</a>
             </td>
         </tr>
     <?php endforeach; ?>

@@ -56,8 +56,21 @@ class Book extends CActiveRecord
 
 	public function findBook( $isbn )
 	{
+        // let's see if we have this in our database
+        $book = $this->findByAttributes(array('isbn'=>$isbn));
+        
+        if( ! $book )
+        {
+            $book = $this -> findByAttributes(array('isbn13'=>$isbn));
+        }
+
+        if( $book )
+        {
+            return $book;
+        }
+
 		// default XML after ISBN search
-		$isbnsearch = <<<ISBN
+/*		$isbnsearch = <<<ISBN
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ISBNdb server_time="2010-01-31T03:58:00Z">
@@ -77,15 +90,22 @@ Sequel to: Harry Potter and the Chamber of Secrets.</Notes>
 </BookData>
 </BookList>
 </ISBNdb>
-ISBN;
+ISBN; */
 		// die( ISBN_SEARCH_URL . $isbn );
-		$isbnsearch = file_get_contents( ISBN_SEARCH_URL . $isbn );
+        $isbnsearch = @file_get_contents( ISBN_SEARCH_URL . $isbn );
 
-		$xml_obj = @simplexml_load_string( $isbnsearch );	
-		if( $xml_obj )
+        if(! $isbnsearch )
+		{
+			return false;
+		}
+
+		$xml_obj = @simplexml_load_string( $isbnsearch );
+        // var_dump( $xml_obj );
+        
+		if( $xml_obj && (int)$xml_obj->Booklist->total_results != 0 )
 		{
 			$book = new Book;
-
+            
 			$book -> isbn 		= (string)$xml_obj->BookList->BookData->attributes()->isbn;
 			$book -> isbn13 	= (string)$xml_obj->BookList->BookData->attributes()->isbn13;
 			$book -> title		= (string)$xml_obj->BookList->BookData->Title;
