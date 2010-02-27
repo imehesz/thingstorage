@@ -102,7 +102,7 @@ ISBN; */
 		$xml_obj = @simplexml_load_string( $isbnsearch );
         // var_dump( $xml_obj );
         
-		if( $xml_obj && (int)$xml_obj->Booklist->total_results != 0 )
+		if( $xml_obj && (int)$xml_obj->BookList->attributes()->total_results[0] != 0 )
 		{
 			$book = new Book;
             
