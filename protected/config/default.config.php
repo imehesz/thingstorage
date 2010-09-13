@@ -76,3 +76,7 @@ defined( 'ISBN_SEARCH_URL' ) or define( 'ISBN_SEARCH_URL', ISBN_BASE_URL . '/api
  */
 defined( 'ISBN_TITLE_URL' ) or define( 'ISBN_TITLE_URL', ISBN_BASE_URL . '/api/books.xml?access_key=' . ISBN_API_KEY . '&index1=title&results=texts&value1=' );
 
+/**
+ *
+ */
+defined( 'COMICVINE_API_KEY' ) or define( 'COMICVINE_API_KEY', 'Your Comic Vine API Key' );
