@@ -102,7 +102,7 @@
             <div style="margin:0 auto;width:200px;margin-top:5px;">
                 <span><input type="radio" id="moboco" name="moboco" value="movie" onclick="$('#infobox').fadeOut();" checked/> movies</span>
                 <span><input type="radio" id="moboco" name="moboco" value="book" onfocus="$('#infobox').fadeIn();"/> books</span>
-                <span><input type="radio" id="moboco" name="moboco" value="comic" disabled /> comics</span>
+                <span><input type="radio" id="moboco" name="moboco" value="comic" onfocus="$('#infobox').fadeOut();" /> comics</span>
             </div>
             </form>
 			<div id="infobox" class="yellow-infobox">

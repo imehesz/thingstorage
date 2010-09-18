@@ -106,6 +106,11 @@ class SiteController extends CController
 					// we will only render 1 book
 					$this -> render( 'book', array( 'book' => $book ) );
 					break;
+
+			case 'comic':
+					$comics = Comic::model()->getComics( $name );
+					$this->render( 'comics', array( 'comics' => $comics ) );
+					break;
 		}
 
 //  TODO revise this and maybe remove
