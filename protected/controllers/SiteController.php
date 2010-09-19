@@ -248,7 +248,7 @@ EMAILBODY;
 		$this -> render( 'email', array( 'form' => $form ) );
 	}
 
-    private function _mailTheStuff()
+    private function _mailTheStuff( $type='book' )
     {
         if( $_POST['Email']['remember_me'] )
         {
@@ -259,10 +259,19 @@ EMAILBODY;
         $subject 	= $_POST['Email']['subject'];
         $message    = $_POST['Email']['body'] . "\r\n\r\n" . '--' . "\r\n" . 'stored by U | info [ at ] mehesz.net';
 
-        $headers 	= 'From: noreply-book-stored-by-u@mehesz.net' . "\r\n" .
+		switch( $type )
+		{
+			case 'comic':
+				$headers 	= 'From: noreply-comic-stored-by-u@mehesz.net' . "\r\n" .
+							'Reply-to: noreply-comic-stored-by-u@mehesz.net'. "\r\n" .
+							'X-Mailer: PHP/' . phpversion();
+
+							break;
+			default:
+        		$headers 	= 'From: noreply-book-stored-by-u@mehesz.net' . "\r\n" .
                     'Reply-to: noreply-book-stored-by-u@mehesz.net'. "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
-
+		}
 
         $session = new CHttpSession;
         $session -> open();
@@ -275,4 +284,41 @@ EMAILBODY;
             $session['mehesznet_storedbyu_flash_message'] = 'errr, please try again ...';
         }
     }
+
+	public function actionEmailcomic()
+	{
+		$id 	= Yii::app()->request->getParam( 'id', NULL );
+		$comic 	= Comic::model()->findByPk($id);
+		$form = new Email();
+
+		$subject = $comic->volume 	? $comic->volume . ': '	: '';
+		$subject .= $comic->name 	? $comic->name 			: '';
+		$subject .= $comic->issue 	? " (#{$comic->issue})"	: '';
+
+		$year = $comic->year? $comic->year : 'n/a';
+
+        $form->subject = $subject;
+
+		$desc = $comic->description;
+
+        $form->body = <<<EMAILBODY
+Volume: {$comic->volume}
+
+Title: {$comic->name}
+
+Year: {$year}
+
+Description: {$desc}
+
+URL (ComicVine): {$comic->url}
+EMAILBODY;
+
+		if( $_POST )
+		{
+            $this->_mailTheStuff( 'comic' );
+			$this->redirect( $this->createUrl('site/search') );
+		}
+		$this -> render( 'email', array( 'form' => $form ) );
+	}
+
 }

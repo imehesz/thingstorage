@@ -26,7 +26,7 @@
             <td class="nohover" colspan="3" style="font-size:12px;" id="info_summary_<?php echo $comic->cvID; ?>">
 				<p style="max-width:500px;"><?php echo $comic->description ;?></p>
 				<p><br /></p>
-                <a  class="thickbox" href="<?php echo $this->createUrl( 'site/email', array( 'height' => 375, 'width' => 425, 'id' => $comic->id ) );?>">send email</a> | <a href="<?php echo $comic->url; ?>" alt="in a new window" title="in a new window" target="_blank">check on ComicVine</a> | <a href="javascript:void(0);" onClick="javascript:$('#info_<?php echo $comic->cvID ?>').hide();">close</a>
+                <a  class="thickbox" href="<?php echo $this->createUrl( 'site/emailcomic', array( 'height' => 375, 'width' => 425, 'id' => $comic->id ) );?>">send email</a> | <a href="<?php echo $comic->url; ?>" alt="in a new window" title="in a new window" target="_blank">check on ComicVine</a> | <a href="javascript:void(0);" onClick="javascript:$('#info_<?php echo $comic->cvID ?>').hide();">close</a>
             </td>
         </tr>
     <?php endforeach; ?>

@@ -2,7 +2,7 @@
 <?= CHtml::beginForm(); ?>
 	<div class="simple">
         <?php echo CHtml::activeLabel($form,'email_address' ); ?>
-        <?php echo CHtml::activeTextField($form,'email_address', array( 'size' => '25', 'value'=> $_COOKIE['mehesznet_storedbyu_email'] ) ); ?>
+        <?php echo CHtml::activeTextField($form,'email_address', array( 'size' => '25', 'value'=> isset($_COOKIE['mehesznet_storedbyu_email'] ) ? $_COOKIE['mehesznet_storedbyu_email'] : 'youremail@example.com' ) ); ?>
 	</div>
 
 	<div class="simple">
