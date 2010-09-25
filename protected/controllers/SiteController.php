@@ -297,9 +297,9 @@ EMAILBODY;
 
 		$year = $comic->year? $comic->year : 'n/a';
 
-        $form->subject = $subject;
+        $form->subject = utf8_encode( $subject );
 
-		$desc = $comic->description;
+		$desc = utf8_encode( $comic->description );
 
         $form->body = <<<EMAILBODY
 Volume: {$comic->volume}
@@ -310,7 +310,7 @@ Year: {$year}
 
 Description: {$desc}
 
-URL (ComicVine): {$comic->url}
+URL: {$comic->url}
 EMAILBODY;
 
 		if( $_POST )

@@ -1,1 +1,4 @@
 nbrpoject
+assets/*
+protected/runtime/*
+*.sqlite
